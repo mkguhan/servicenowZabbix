@@ -35,5 +35,7 @@ def main():
     group_conneciton = ServiceNow.Group(connection)
     new_incident = ServiceNow.Incident.create(incident_Connection,{"short_description":description,"description":detail,"priority":"3","u_requestor":"autoalert","u_contact_type":"Auto Monitoring","assignment_group": assignmentgroup})
     message = f'Incident # {new_incident} has been Created'
+    log_service_now(message)
 
+    
 main()
