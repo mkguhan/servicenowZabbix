@@ -22,12 +22,13 @@ def connect_servicenow(user, passwd, inst ):
 
 def main():
     #Variable assignments
-    user = sys.argv[0]
-    passwd = sys.argv[1]
-    instance_name = sys.argv[2]
-    description = sys.argv[3]
-    detail = sys.argv[4]
-    assignmentgroup = sys.argv[5]
+    assignmentgroup = sys.argv[1]
+    user = "zabbixicc"
+    passwd = "tcs#1234"
+    instance_name = "dev99449"
+    description = sys.argv[2]
+    detail = sys.argv[3]
+
     #Creating the conneciton to Service now
     connection = connect_servicenow(user, passwd, instance_name)
     #Connection the incident instance on Service now
@@ -37,5 +38,5 @@ def main():
     message = f'Incident # {new_incident} has been Created'
     log_service_now(message)
 
-    
+
 main()
